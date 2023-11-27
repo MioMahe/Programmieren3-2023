@@ -18,7 +18,7 @@ class Gras  {
         }//else {this.energie++}
     };
     pflanzNeueGrasZelle(){
-        let erdeFelder = this.findeErdeFelder()
+        let WelchesFeld = this.WelchesFeld()
         if (erdeFelder.length >0){
             randomNumber1 = Math.floor(Math.random()*erdeFelder.length)
             let erdeFeld=erdeFelder[randomNumber1]
@@ -26,27 +26,27 @@ class Gras  {
             ObjektArray.push(pflazNeueGrasZelle)
         }
     };
-    findeErdeFelder(){
-        let benachbarteFelder = [
-            [this.zeile+1,this.spalte],
-            [this.zeile-1,this.spalte],
-            [this.zeile,this.spalte+1],
-            [this.zeile,this.spalte-1]
-        ]
-        let erdeFelder = benachbarteFelder.filter(this.istErde)
-        return erdeFelder
-    };
-  istErde(koordinatenPaar) {
-    let zeile = koordinatenPaar[0]
-    let spalte = koordinatenPaar[1]
-	if( zeile>=0&&
-        spalte>=0&&
-        zeile<xy&&
-        spalte< xy
-        && matrix[zeile][spalte] === 0){
-        return true;
-    }else {
-        return false;
-    }
-}
+//     findeErdeFelder(){
+//         let benachbarteFelder = [
+//             [this.zeile+1,this.spalte],
+//             [this.zeile-1,this.spalte],
+//             [this.zeile,this.spalte+1],
+//             [this.zeile,this.spalte-1]
+//         ]
+//         let erdeFelder = benachbarteFelder.filter(this.istErde)
+//         return erdeFelder
+//     };
+//   istErde(koordinatenPaar) {
+//     let zeile = koordinatenPaar[0]
+//     let spalte = koordinatenPaar[1]
+// 	if( zeile>=0&&
+//         spalte>=0&&
+//         zeile<xy&&
+//         spalte< xy
+//         && matrix[zeile][spalte] === 0){
+//         return true;
+//     }else {
+//         return false;
+//     }
+// }
 }

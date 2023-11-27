@@ -13,18 +13,17 @@ class Lebewesen {
             [this.zeile - 1, this.spalte - 1]
         ]
     }
-    WlchesFeld(ch) {
-        let found = []
-        for (let i in this.benachbarteFelder) {
-            let z = this.benachbarteFelder[i][0];
-            let z = this.benachbarteFelder[i][1];
-            if (z >= 0 && z < matrix[0].length && s >= 0 && s < matrix.length) {
-                if (matrix[z][s] == ch) {
-                    found.push(this.benachbarteFelder[i])
-                }
-            }
+    WelchesFeld(ch) {
+        let zeile = koordinatenPaar[0]
+        let spalte = koordinatenPaar[1]
+        if( zeile>=0&&
+            spalte>=0&&
+            zeile<xy&&
+            spalte< xy
+            && matrix[zeile][spalte] === 0){
+            return true;
+        }else {
+            return false;
         }
-        return found
     }
-
 }
